@@ -36,3 +36,42 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+// TODO:
+
+Prisma seeds for tests
+
+
+FOLDER STRUCTURE: https://dev.to/vadorequest/a-2021-guide-about-structuring-your-next-js-project-in-a-flexible-and-efficient-way-472
+
+/public
+    favicon.ico
+/src
+    /common
+        /components
+            /elements
+                /[Name]
+                    [Name].tsx
+                    [Name].test.ts
+        /hooks
+        /types
+        /utils
+    /modules
+        /auth
+            /api
+                AuthAPI.js
+                AuthAPI.test.js
+            /components
+                AuthForm.tsx
+                AuthForm.test.ts
+            auth.js
+    /pages
+        /api
+          /authAPI
+              authAPI.js
+          /[Name]API
+              [Name]API.js
+        _app.tsx
+        _document.tsx
+        index.tsx
