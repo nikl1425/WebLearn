@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100&family=Padyakke+Expanded+One&family=Red+Hat+Display:wght@300&family=Roboto:wght@100&display=swap');
+
+
+body {
+    font-family: 'Space Mono', monospace;
+}
