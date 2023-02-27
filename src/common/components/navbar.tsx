@@ -19,9 +19,10 @@ const NavItem: FC<{ linkRef: string, name: string }> = ({ linkRef, name }) => {
 const NavLinkContainer: FC = () => {
     return (
         <div className=" h-full flex items-center ">
-            <ul className="inline px-4 font-bold">
-                <NavItem name="about" linkRef="/about" />
+            <ul className="inline px-4 font-semibold">
+                <NavItem name="home" linkRef="/" />
                 <NavItem name="course" linkRef="/course" />
+                <NavItem name="about" linkRef="/about" />
             </ul>
         </div>
     )
@@ -44,7 +45,7 @@ const NavCompanyWrapper: FC = () => {
 
 const NavBar: FC = () => {
     return (
-        <div className=" h-12 bg-blue-100 flex">
+        <div className=" h-12 flex">
             <div className=" flex-initial">
                 <NavCompanyWrapper />
             </div>

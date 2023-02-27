@@ -1,14 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import Layout from '@/common/components/layout'
 
+import { Inter } from 'next/font/google'
+import JumboTron from '../common/components/jumbotron'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <>
-      
+      <div>
+        <JumboTron />
+      </div>
     </>
   )
 }
