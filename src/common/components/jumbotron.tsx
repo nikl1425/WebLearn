@@ -14,7 +14,7 @@ type JumboStyle = {
 type JumboTronProps = {
     title: string
     subTitle?: string 
-    buttons: JumboButtonProps[]
+    buttons?: JumboButtonProps[]
     bannerIcon?: string
     bannerImg?: string
     style: JumboStyle
