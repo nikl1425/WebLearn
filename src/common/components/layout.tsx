@@ -1,4 +1,4 @@
-import React, {FC} from "react";
+import React, { FC } from "react";
 import NavBar from "./navbar";
 import type { ReactNode } from "react";
 
@@ -7,20 +7,23 @@ type LayoutProps = {
     children: ReactNode
 }
 
-const Layout: FC<LayoutProps> = ({children}) => {
+const Layout: FC<LayoutProps> = ({ children }) => {
     return (
         <>
-            <header>
-                <NavBar />
-            </header>
+            <div className=" flex flex-col h-full">
+                <header className="flex-1">
+                    <NavBar />
+                </header>
 
-            <main>
-                {children}
-            </main>
+                <main className=" grow h-full">
+                    {children}
+                </main>
 
-            <footer>
+                <footer className=" flex-initial">
 
-            </footer>
+                </footer>
+            </div>
+
         </>
     )
 }
