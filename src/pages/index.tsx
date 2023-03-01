@@ -2,7 +2,7 @@
 import { Inter } from 'next/font/google'
 import JumboTron from '../common/components/jumbotron'
 const inter = Inter({ subsets: ['latin'] })
-
+import { FaBookReader } from "react-icons/fa";
 
 export default function Home() {
 
@@ -20,6 +20,7 @@ export default function Home() {
             { text: 'Intro Video', func: () => {}, color: 'yellow'}
           ]
         }
+        bannerIcon={<FaBookReader size={50} className=" text-green-400"/>}
         />
       </div>
     </>

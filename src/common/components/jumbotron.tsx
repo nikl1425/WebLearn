@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-
+import { JsxElement } from "typescript";
 
 type JumboButtonProps = {
     text: string,
@@ -13,23 +13,24 @@ type JumboStyle = {
 
 type JumboTronProps = {
     title: string
-    subTitle?: string 
+    subTitle?: string
     buttons?: JumboButtonProps[]
-    bannerIcon?: string
-    bannerImg?: string
+    bannerIcon?: JSX.Element // TODO Skal tilføjes en eller til next js image type
     style: JumboStyle
 }
 
-const JumboTron: FC<JumboTronProps> = ({title, subTitle, buttons, bannerIcon, bannerImg, style}) => {
+const JumboTron: FC<JumboTronProps> = ({ title, subTitle, buttons, bannerIcon, style }) => {
     return (
         <div className="w-full h-full bg-white shadow-2xl rounded-lg mx-auto text-center flex">
-            <div>
 
-            </div>
             <div className=" mx-auto my-auto ">
+                <div className=" flex w-full justify-center">
+                    <div className=" my-3">
+                        {bannerIcon}
+                    </div>
+                </div>
                 <h2 className="text-3xl leading-9 font-bold tracking-tight text-gray-800 sm:text-4xl sm:leading-10">
                     {title}
-                    Start studying with us
                 </h2>
                 <h4>
                     {subTitle}
