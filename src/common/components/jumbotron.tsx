@@ -35,12 +35,19 @@ const JumboTron: FC<JumboTronProps> = ({ title, subTitle, buttons, bannerIcon, s
                 <h4>
                     {subTitle}
                 </h4>
-                <div className="mt-4 mb-4 flex justify-center">
-                    <div className="inline-flex rounded-md bg-blue-500 shadow">
+                <div className="mt-4 mb-4 flex justify-center space-x-3">
+                    <button className="hover:bg-blue-700 inline-flex rounded-md bg-blue-500 shadow">
                         <a href="#" className="text-gray-200 font-bold py-2 px-6">
-                            Start
+                            Explore
                         </a>
-                    </div>
+                    </button>
+                    <button className="hover:bg-yellow-600 inline-flex rounded-md bg-yellow-400 hover:shadow-lg transition duration-150 ease-in-out focus:bg-white-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-white-800 active:shadow-lg">
+                        <a href="#" className="text-gray-200 font-bold py-2 px-6">
+                            Explore
+                        </a>
+                    </button>
+                    
+
                 </div>
             </div>
         </div>
