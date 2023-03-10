@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import JumboTron from '../common/components/jumbotron'
 const inter = Inter({ subsets: ['latin'] })
 import { FaBookReader } from "react-icons/fa";
+import Button from '../common/components/button';
+
 
 export default function Home() {
 
@@ -16,8 +18,8 @@ export default function Home() {
         style={{centerRelativeTo: 'screen'}}
         buttons={
           [
-            { text: 'Explore', func: () => {}, color: 'green'},
-            { text: 'Intro Video', func: () => {}, color: 'yellow'}
+            <Button onclick={() => console.log('hi')} style={{bgColor: 'info', hoverColor: 'info'}} buttonText='Explore' />,
+            <Button onclick={() => console.log('hi')} style={{bgColor: 'alert', hoverColor: 'alert'}} buttonText='Intro Video' />
           ]
         }
         bannerIcon={<FaBookReader size={50} className=" text-green-400"/>}

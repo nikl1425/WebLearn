@@ -6,7 +6,7 @@ type btnStyleProps = {
     textColor?: 'black' | 'white'
 }
 
-type ButtonProps = {
+export type ButtonProps = {
     type?: 'submit' | 'reset' | 'button',
     onclick: () => void,
     style: btnStyleProps,
@@ -16,10 +16,10 @@ type ButtonProps = {
 const getTextColor = (val : string | undefined) => val === 'black' || val === undefined ? 'text-black' : 'text-white';
 
 const bgHoverColorMap = new Map<string, string>([
-    ['success', 'bg-green-600'],
-    ['danger', 'bg-red-600'],
-    ['alert', 'bg-yellow-400'],
-    ['info', 'bg-sky-600']
+    ['success', 'hover:bg-green-600'],
+    ['danger', 'hover:bg-red-600'],
+    ['alert', 'hover:bg-yellow-400'],
+    ['info', 'hover:bg-sky-600']
 ])
 
 const bgColorMap = new Map<string, string>([
@@ -42,7 +42,7 @@ const Button: FC<ButtonProps> = (props) => {
             <button
             type={props.type}
             onClick={props.onclick}
-            className={btnStyle(props.style) + ''}>
+            className={`${btnStyle(props.style)} py-2 px-4 font-bold rounded border-black border-2`}>
                 {props.buttonText}
             </button>
         </>
