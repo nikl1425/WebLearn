@@ -25,10 +25,6 @@ const UseRipple = () => {
         } else setIsRippling(false);
     }, [coords]);
 
-    React.useEffect(() => {
-        if (!isRippling) setCoords({ x: -1, y: -1 });
-      }, [isRippling]);
-
     ref.current?.classList.add('ripple-button');
    
     if(isRippling){
