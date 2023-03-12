@@ -18,7 +18,7 @@ export default function Home() {
         style={{centerRelativeTo: 'screen'}}
         buttons={
           [
-            <Button onclick={() => console.log('hi')} style={{bgColor: 'info', hoverColor: 'info'}} buttonText='Explore' />,
+            <Button onclick={() => console.log('hi')} style={{bgColor: 'success', hoverColor: 'success'}} buttonText='Explore' />,
             <Button onclick={() => console.log('hi')} style={{bgColor: 'alert', hoverColor: 'alert'}} buttonText='Intro Video' />
           ]
         }

@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
+import UseRipple from '../hooks/useRipple';
 
 type btnStyleProps = {
     bgColor: string,
@@ -36,13 +37,18 @@ const btnStyle = (input: btnStyleProps) => {
     return [bg, hover, btnTxtCol ].join(' ') + ' ';
 }
 
+
 const Button: FC<ButtonProps> = (props) => {
+
+    const ripple = UseRipple();
+
     return (
         <>
             <button
             type={props.type}
+            ref={ripple}
             onClick={props.onclick}
-            className={`${btnStyle(props.style)} py-2 px-4 font-bold rounded border-black border-2`}>
+            className={`${btnStyle(props.style)} py-2 px-4 font-bold rounded border-black border-2 relative overflow-hidden ripple`}>
                 {props.buttonText}
             </button>
         </>
