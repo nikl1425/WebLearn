@@ -1,6 +1,3 @@
-import { Html } from 'next/document';
-import { userAgent } from 'next/server'
-import { type } from 'os';
 import React, { useRef, useState, useEffect } from 'react'
 
 
@@ -35,9 +32,19 @@ const UseRipple = () => {
     ref.current?.classList.add('ripple-button');
    
     if(isRippling){
-        let child2 = document.createElement('span');
-        child2.className = 'ripple';
-        ref.current?.appendChild(child2)
+        const child = document.createElement('span');
+        child.className = 'ripple';
+        ref.current?.appendChild(child)
+    }
+
+    if(!isRippling){
+        const ripples = ref.current?.getElementsByClassName('ripple');
+
+        if(ripples != undefined){
+            while(ripples[0]){
+                ripples[0].parentNode?.removeChild(ripples[0])
+            }
+        }
     }
 
     return ref;
