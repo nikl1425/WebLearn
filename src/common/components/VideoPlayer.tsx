@@ -17,9 +17,10 @@ const LocalSourcePlayer: FC = () => {
 }
 
 const YouTubePlayer : FC = () => {
+
     return (
         <>
-        
+            <iframe className="w-full aspect-video " src="https://www.youtube.com/embed/tKXA1qLUN6o"></iframe>    
         </>
     )
 }
@@ -33,3 +34,5 @@ const VideoPlayer : FC<VideoPlayerProps> = ({source}) => {
         </>
     )
 }
+
+export default VideoPlayer;
