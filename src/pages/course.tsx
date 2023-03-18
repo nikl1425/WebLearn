@@ -1,5 +1,8 @@
 import { PrismaClient } from "@prisma/client";
 import { CourseProps } from "@/common/models";
+import { FaSearch } from "react-icons/fa";
+import {AiOutlineSearch} from "react-icons/ai";
+
 
 export async function getStaticProps() {
     const prisma = new PrismaClient();
@@ -14,18 +17,30 @@ export async function getStaticProps() {
 }
 
 const Course = ({ courses }: CourseProps) => {
+
+
+
     return (
         <>
-            <div className="bg-cover bg-center  h-auto text-black py-24 px-10 object-fill">
-                <div className="md:w-1/2">
-                    <h1 className="text-3xl font-bold">Multimedia products</h1>
-                    <p className="text-2xl mb-10 leading-none">Atractive designs for your brand</p>
-                    <a href="#" className="bg-purple-800 py-4 px-8 text-white font-bold uppercase text-xs rounded hover:bg-gray-200 hover:text-gray-800">Contact us</a>
+            <div className=" bg-green-300  mx-auto text-center py-12">
+                <div className="pt-16 pb-16">
+                    <h2 className="text-3xl leading-9 font-bold tracking-tight text-gray-800 sm:text-4xl sm:leading-10">
+                        Start studying with us
+                    </h2>
+                    <div className="mt-8 ">
+                        <div className="inline-flex bg-white shadow rounded-lg">
+                            <div className="flex justify-center mt-1 mb-1 mr-1 "> 
+                            <AiOutlineSearch size={20} fontWeight={400} className="text-gray-400 m-auto ml-2"/>
+                            <input className="w-60 pl-2 border-transparent focus:outline-none" placeholder="Søg efter kurser..." />
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
             <div className="container ">
-                <div className="w-full text-center">
-                    <h1 className="font-bold text-3xl text-green-500">Kurser</h1>
+                <div className="w-full text-center mt-4">
+                    <h1 className="font-bold text-3xl">Tilgængelige Kurser</h1>
                 </div>
 
 
