@@ -1,7 +1,7 @@
 import { PrismaClient } from "@prisma/client";
 import { CourseProps } from "@/common/models";
 import { FaSearch } from "react-icons/fa";
-import { AiOutlineSearch } from "react-icons/ai";
+
 import Card from "@/common/components/card";
 
 
@@ -23,19 +23,12 @@ const Course = ({ courses }: CourseProps) => {
 
     return (
         <>
-            <div className=" bg-green-300  mx-auto text-center py-12">
-                <div className="pt-16 pb-16">
-                    <h2 className="text-3xl leading-9 font-bold tracking-tight text-gray-800 sm:text-4xl sm:leading-10">
+            <div className=" shadow-md bg-gray-50 py-12">
+                <div className="pt-16 pb-16 container flex-1 text-center">
+                    <h2 className="text-3xl leading-9 font-bold tracking-tight text-green-400 sm:text-4xl sm:leading-10 text-shadow-custom drop-shadow-xl">
                         Start studying with us
                     </h2>
-                    <div className="mt-8 ">
-                        <div className="inline-flex bg-white shadow rounded-lg">
-                            <div className="flex justify-center mt-1 mb-1 mr-1 ">
-                                <AiOutlineSearch size={20} fontWeight={400} className="text-gray-400 m-auto ml-2" />
-                                <input className="w-60 pl-2 border-transparent focus:outline-none" placeholder="Søg efter kurser..." />
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
 
             </div>

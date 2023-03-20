@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Book from 'public/book.png';
+import { AiOutlineSearch } from "react-icons/ai";
 
 
 const NavItem: FC<{ linkRef: string, name: string }> = ({ linkRef, name }) => {
@@ -34,7 +35,7 @@ const NavLogo: FC = () => {
 
 const NavCompanyWrapper: FC = () => {
     return (
-        <div className=" justify-center flex flex-row h-full right">  
+        <div className=" justify-center flex flex-row h-full right">
             <h1 className=" text-lg my-auto">Learn<span className=" font-bold text-green-400 text-xl px-0 mx-0">4</span>Fun</h1>
         </div>
     )
@@ -59,14 +60,23 @@ const NavCompanyWrapper: FC = () => {
 
 const NavBar: FC = () => {
     return (
-        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-            <div className="container flex flex-wrap items-center justify-between mx-auto">
+        <nav className="bg-white border-gray-200 py-2.5 rounded dark:bg-gray-900">
+            <div className="container flex flex-wrap items-center justify-between">
                 <a href="https://flowbite.com/" className="flex items-center">
                     <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+
                     <div className=" flex-initial">
                         <NavCompanyWrapper />
                     </div>
                 </a>
+                <div className="">
+                    <div className="inline-flex bg-white shadow rounded-lg">
+                        <div className="flex justify-center mt-1 mb-1 mr-1 ">
+                            <AiOutlineSearch size={20} fontWeight={400} className="text-gray-400 m-auto ml-2" />
+                            <input className="w-60 pl-2 border-transparent focus:outline-none" placeholder="Søg efter kurser..." />
+                        </div>
+                    </div>
+                </div>
 
                 <NavLinkContainer />
 
