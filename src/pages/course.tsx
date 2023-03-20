@@ -33,19 +33,29 @@ const Course = ({ courses }: CourseProps) => {
 
             </div>
             <div className="container mb-6">
-                <div className="w-full text-left mt-4">
-                    <h1 className="font-bold text-3xl font-press-start">Tilgængelige Kurser</h1>
+                <div className="flex flex-col">
+                    <div className="w-full text-left mt-4">
+                        <h1 className="font-bold text-3xl font-press-start">Tilgængelige Kurser</h1>
+                    </div>
+
+                    <div className="flex">
+                        <div>
+
+                        </div>
+                        <div className="mt-6 mb-6">
+                            <div className="flex flex-row space-x-10 justify-center">
+                                {courses.map((course) => (
+                                    <div key={course.id}>
+                                        <Card title={course.title} description={course.description ? course.description : ''} />
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+
+                    
                 </div>
 
-                <div className="mt-6 mb-6">
-                    <div className="flex flex-row space-x-10 justify-center">
-                        {courses.map((course) => (
-                            <div key={course.id}>
-                                <Card title={course.title} description={course.description ? course.description : ''} />
-                            </div>
-                        ))}
-                    </div>
-                </div>
             </div>
             <div>hej</div>
         </>
