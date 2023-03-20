@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100&family=Padyakke+Expanded+One&family=Red+Hat+Display:wght@300&family=Roboto:wght@100&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,500&display=swap');
 
 html {
     height: 100%;
@@ -11,7 +11,7 @@ html {
 
 body {
     height: 100vh;
-    font-family: 'Space Mono', monospace;
+    
 }
 
 #__next {

@@ -19,10 +19,10 @@ const NavItem: FC<{ linkRef: string, name: string }> = ({ linkRef, name }) => {
 const NavLinkContainer: FC = () => {
     return (
         <div className=" h-full flex items-center ">
-            <ul className="inline px-4 font-semibold">
-                <NavItem name="home" linkRef="/" />
-                <NavItem name="course" linkRef="/course" />
-                <NavItem name="about" linkRef="/about" />
+            <ul className="inline px-6 font-regular">
+                <NavItem name="Hjem" linkRef="/" />
+                <NavItem name="Kurser" linkRef="/course" />
+                <NavItem name="Information" linkRef="/about" />
             </ul>
         </div>
     )
@@ -34,18 +34,15 @@ const NavLogo: FC = () => {
 
 const NavCompanyWrapper: FC = () => {
     return (
-        <div className=" justify-center mx-3 flex flex-row h-full right">
-            <NavLogo />
-            <h1 className=" px-4 text-lg my-auto">Learn<span className=" font-bold text-green-400 text-xl px-0 mx-0">4</span>Fun</h1>
+        <div className=" justify-center flex flex-row h-full right">  
+            <h1 className=" text-lg my-auto">Learn<span className=" font-bold text-green-400 text-xl px-0 mx-0">4</span>Fun</h1>
         </div>
     )
 }
 
-
-
-const NavBar: FC = () => {
-    return (
-        <div className=" h-12 flex">
+/**
+ * 
+ * <div className=" h-12 flex">
             <div className=" flex-initial">
                 <NavCompanyWrapper />
             </div>
@@ -56,7 +53,25 @@ const NavBar: FC = () => {
                 <NavLinkContainer />
                 <div className=" w-10 h-full"/>
             </div>
-        </div>
+        </div> 
+ * 
+ */
+
+const NavBar: FC = () => {
+    return (
+        <nav className="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+            <div className="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="https://flowbite.com/" className="flex items-center">
+                    <img src="https://flowbite.com/docs/images/logo.svg" className="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
+                    <div className=" flex-initial">
+                        <NavCompanyWrapper />
+                    </div>
+                </a>
+
+                <NavLinkContainer />
+
+            </div>
+        </nav>
     )
 }
 

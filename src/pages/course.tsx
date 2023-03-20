@@ -41,7 +41,7 @@ const Course = ({ courses }: CourseProps) => {
             </div>
             <div className="container mb-6">
                 <div className="w-full text-left mt-4">
-                    <h1 className="font-bold text-3xl">Tilgængelige Kurser</h1>
+                    <h1 className="font-bold text-3xl font-press-start">Tilgængelige Kurser</h1>
                 </div>
 
                 <div className="mt-6 mb-6">
