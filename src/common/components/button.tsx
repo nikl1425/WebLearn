@@ -4,7 +4,8 @@ import UseRipple from '../hooks/useRipple';
 type btnStyleProps = {
     bgColor: string,
     hoverColor?: string,
-    textColor?: 'black' | 'white'
+    textColor?: 'black' | 'white',
+    size?: 'sm' | 'md',
 }
 
 export type ButtonProps = {
@@ -30,11 +31,17 @@ const bgColorMap = new Map<string, string>([
     ['info', 'bg-sky-500']
 ])
 
+const btnSize = new Map<string, string>([
+    ['sm', 'text-sm px-1 py-0.5'],
+    ['md', 'text-base py-2 px-4']
+])
+
 const btnStyle = (input: btnStyleProps) => {
     let bg = bgColorMap.get(input.bgColor);
     let hover = input.hoverColor != undefined ? bgHoverColorMap.get(input.hoverColor) : '';
-    let btnTxtCol = getTextColor(input.textColor)
-    return [bg, hover, btnTxtCol ].join(' ') + ' ';
+    let btnTxtCol = getTextColor(input.textColor);
+    let btnTextSize = input.size != undefined ? btnSize.get(input.size) : btnSize.get('md');
+    return [bg, hover, btnTxtCol, btnTextSize ].join(' ') + ' ';
 }
 
 
@@ -48,7 +55,7 @@ const Button: FC<ButtonProps> = (props) => {
             type={props.type}
             ref={ripple}
             onClick={props.onclick}
-            className={`${btnStyle(props.style)} py-2 px-4 font-bold rounded border-black border-2 relative overflow-hidden ripple`}>
+            className={`${btnStyle(props.style)}  font-semibold rounded border-black border-2 relative overflow-hidden ripple`}>
                 {props.buttonText}
             </button>
         </>
