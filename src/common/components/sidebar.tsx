@@ -2,6 +2,8 @@ import React, { FC, useState } from "react";
 import Button from "./button";
 import {RiCloseCircleLine} from 'react-icons/ri';
 import {GiHamburgerMenu} from 'react-icons/gi';
+import useStore from '../../store/store';
+
 
 const UserContainer: FC = () => {
     return (
@@ -30,14 +32,14 @@ const CloseOpenHandler : FC<{handler: () => void, state: boolean}> = ({handler, 
 
 const SideBar: FC = () => {
     const [open, setOpen] = useState(true);
-    
+    const sidebarHandler = useStore((state => state));
     const setReverseOpenState = () => {
         setOpen(!open);
     }
 
     return (
-        <div className={`h-full w-56 bg-gray-800 ${open ? 'w-56' : 'w-20'}`}>
-            <CloseOpenHandler handler={setReverseOpenState} state={open} />
+        <div className={`h-full w-56 bg-gray-800 ${sidebarHandler.sidebarOpen ? 'w-56' : 'w-20'}`}>
+            <CloseOpenHandler handler={sidebarHandler.setSidebarOpen} state={open} />
             <UserContainer />
         </div>
     )
