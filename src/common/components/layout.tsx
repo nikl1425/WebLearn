@@ -14,25 +14,28 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
     return (
         <>
-            <div className="fixed bottom-0 top-0">
-                <SideBar />
-            </div>
-            <main className="ml-56 h-full">
-                <div className=" flex flex-col h-full">
-                    <header className="flex-1">
-                        <NavBar />
-                    </header>
-
-                    <main className=" grow h-full">
-                        {children}
-                    </main>
-
-                    <footer className=" flex-initial">
-
-                    </footer>
+            <div className="">
+                <div className={`transition-width duration-700 ease-in-out fixed bottom-0 top-0 left-0  ${sidebarOpen ? 'w-56' : 'w-20'}`}>
+                    <SideBar />
                 </div>
-            </main>
-            
+                <main className={`h-full transition-spacing duration-700 ease-in-out ${sidebarOpen ? 'ml-56' : 'ml-20'}`}>
+                    <div className=" flex flex-col h-full">
+                        <header className="flex-1">
+                            <NavBar />
+                        </header>
+
+                        <main className=" grow h-full">
+                            {children}
+                        </main>
+
+                        <footer className=" flex-initial">
+
+                        </footer>
+                    </div>
+                </main>
+            </div>
+
+
 
 
         </>

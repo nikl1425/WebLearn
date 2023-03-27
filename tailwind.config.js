@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       fontFamily: {
         'press-start': ['Press Start 2P', 'cursive']
+      },
+      transitionProperty: {
+        'width': 'width',
+        'spacing': 'margin, padding',
       }
     },
     container: {

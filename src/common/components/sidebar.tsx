@@ -38,7 +38,7 @@ const SideBar: FC = () => {
     }
 
     return (
-        <div className={`h-full w-56 bg-gray-800 ${sidebarHandler.sidebarOpen ? 'w-56' : 'w-20'}`}>
+        <div className={`h-full bg-gray-800`}>
             <CloseOpenHandler handler={sidebarHandler.setSidebarOpen} state={open} />
             <UserContainer />
         </div>

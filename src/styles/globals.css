@@ -60,3 +60,7 @@ body {
   .text-shadow-custom {
     text-shadow: #0000 3px 0 10px;;
   }
+
+  .sidebar-collapse {
+    transition: left .3s ease-in-out;
+  }

@@ -7,6 +7,6 @@ export interface LayoutSlice  {
 
 export const createLayoutSlice: StateCreator<LayoutSlice> = (set) => ({
     sidebarOpen: true,
-    setSidebarOpen: () => set((state) => ({sidebarOpen: state.sidebarOpen = !state.sidebarOpen}))
+    setSidebarOpen: () => set((state) => ({sidebarOpen: !state.sidebarOpen}))
 })
 
