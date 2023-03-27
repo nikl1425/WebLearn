@@ -14,7 +14,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
 
     return (
         <>
-            <div className="">
+            <div className="h-full">
                 <div className={`transition-width duration-700 ease-in-out fixed bottom-0 top-0 left-0  ${sidebarOpen ? 'w-56' : 'w-20'}`}>
                     <SideBar />
                 </div>

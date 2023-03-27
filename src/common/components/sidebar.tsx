@@ -5,15 +5,17 @@ import {GiHamburgerMenu} from 'react-icons/gi';
 import useStore from '../../store/store';
 
 
-const UserContainer: FC = () => {
+const UserContainer: FC<{show: boolean}> = ({show}) => {
     return (
         <>
             <div className="flex items-center flex-col mt-14 mb-4">
-                <div className="rounded-full bg-green-300 w-28 h-28 flex mb-2">
-                    <span className="my-auto mx-auto text-white font-bold tracking-wider text-lg">NHR</span>
+                <div className={`transition-width duration-700 ease-in-out ${ show ? 'w-28' : 'w-0'}`}>
+                    {show && <div className="rounded-full bg-green-300 h-28 flex mb-2">
+                        <span className="my-auto mx-auto text-white font-bold tracking-wider text-lg">NHR</span>
+                    </div>
+                    }  
                 </div>
-
-                <Button style={{bgColor: 'info', hoverColor: 'info', textColor: 'white', size: 'sm' }} type='button' onclick={() => console.log("hej")} buttonText='Login' />
+                {show && <Button style={{bgColor: 'info', hoverColor: 'info', textColor: 'white', size: 'sm' }} type='button' onclick={() => console.log("hej")} buttonText='Login' />} 
             </div>
         </>
     )
@@ -40,7 +42,7 @@ const SideBar: FC = () => {
     return (
         <div className={`h-full bg-gray-800`}>
             <CloseOpenHandler handler={sidebarHandler.setSidebarOpen} state={open} />
-            <UserContainer />
+            <UserContainer show={sidebarHandler.sidebarOpen}/>
         </div>
     )
 }
