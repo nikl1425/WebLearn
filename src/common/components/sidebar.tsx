@@ -12,14 +12,15 @@ import { IconType } from "react-icons/lib";
 const UserContainer: FC<{show: boolean}> = ({show}) => {
     return (
         <>
-            <div className="flex items-center flex-col mt-14 mb-4">
-                <div className={`transition-width duration-700 ease-in-out ${ show ? 'w-28' : 'w-0'}`}>
-                    {show && <div className="rounded-full bg-green-400 h-28 flex mb-2">
+            <div className="flex items-center flex-col mt-14 mb-4 h-44">
+                <div className={`transition-width duration-700 ease-in-out ${show ? 'w-28 h-28' : 'w-0'}`}>
+                    {show && <div className="rounded-full bg-green-400 flex mb-2 h-full">
                         <span className="my-auto mx-auto text-white font-bold tracking-wider text-lg">NHR</span>
-                    </div>
-                    }  
+                    </div>}
                 </div>
-                {show && <Button style={{bgColor: 'info', hoverColor: 'info', textColor: 'white', size: 'sm' }} type='button' onclick={() => console.log("hej")} buttonText='Login' />} 
+                <div className="mt-4">
+                    {show && <Button style={{ bgColor: 'info', hoverColor: 'info', textColor: 'white', size: 'sm' }} type='button' onclick={() => console.log("hej")} buttonText='Login' />}
+                </div>
             </div>
         </>
     )
@@ -40,18 +41,18 @@ const NavLink : FC<{name: string, route: string, symbol: IconType}> = ({name, ro
 
     return (
         <>
-            <div>
-                <Link href={"/" + route}>
-                    <div>
-                        <div>
-                            {<Icon className="text-green-400" size={25} />}
+            <Link href={"/" + route}>
+                <div className="h-10 w-full hover:bg-gray-700">
+                    <div className="flex flex-row h-full">
+                        <div className="pl-2 my-auto">
+                            {<Icon className="text-green-400" size={22} />}
                         </div>
-                        <span>
+                        <span className="pl-2 my-auto text-white">
                             {name}
                         </span>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </Link>
         </>
     )
 }
@@ -82,6 +83,15 @@ const SideBar: FC = () => {
             <CloseOpenHandler handler={sidebarHandler.setSidebarOpen} state={open} />
             <UserContainer show={sidebarHandler.sidebarOpen}/>
             <NavLinkList />
+
+            <div className=" text-white relative h-full">
+                <div className="bottom-0">
+                    <div className="bottom-0 h-16 w-16">
+                    hej
+                    </div>
+                </div>
+                
+            </div>
         </div>
     )
 }
